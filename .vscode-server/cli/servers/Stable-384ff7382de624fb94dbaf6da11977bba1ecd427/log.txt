@@ -1,0 +1,87 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to /tmp/code-59304ee7-0856-48c4-812d-f2a6bc83f1b1
+Extension host agent listening on /tmp/code-59304ee7-0856-48c4-812d-f2a6bc83f1b1
+
+[02:27:25] 
+
+
+
+
+[02:27:28] Extension host agent started.
+[02:27:28] [<unknown>][d764c2e9][ExtensionHostConnection] New connection established.
+[02:27:28] [<unknown>][a2d05fc5][ManagementConnection] New connection established.
+[02:27:28] ExtensionHostConnection#buildUserEnvironment resolving shell environment failed Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:28] [<unknown>][d764c2e9][ExtensionHostConnection] <undefined> Launched Extension Host Process.
+[02:27:28] [<unknown>][d764c2e9][ExtensionHostConnection] <undefined> Extension Host Process had an error
+[02:27:28] Error: spawn /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node (deleted) ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:286:19)
+    at onErrorNT (node:internal/child_process:484:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node (deleted)',
+  path: '/teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node (deleted)',
+  spawnargs: [
+    '--dns-result-order=ipv4first',
+    '/teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/bootstrap-fork',
+    '--type=extensionHost',
+    '--transformURIs',
+    '--useHostProxy=false'
+  ]
+}
+Cancelling previous shutdown timeout
+[02:27:28] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[02:27:28] Last EH closed, waiting before shutting down
+[02:27:29] resolving shell environment failed Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+[02:27:29] ptyHost was unable to resolve shell environment Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:29] ptyHost was unable to resolve shell environment Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:29] ptyHost was unable to resolve shell environment Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:29] ptyHost was unable to resolve shell environment Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+IPC "File Watcher" errored with Error: spawn /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node (deleted) ENOENT
+[02:27:31] ExtensionHostConnection#buildUserEnvironment resolving shell environment failed Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+IPC "Pty Host" errored with Error: spawn /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node (deleted) ENOENT
+[02:27:31] ExtensionHostConnection#buildUserEnvironment resolving shell environment failed Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:31] ExtensionHostConnection#buildUserEnvironment resolving shell environment failed Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:31] ExtensionHostConnection#buildUserEnvironment resolving shell environment failed Error: Unable to resolve your shell environment: Unexpected exit code from spawned shell (code 127, signal null)
+    at file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:48:839
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/out/vs/server/node/server.main.js:33:26681
+[02:27:36] No ptyHost response to createProcess after 5 seconds
+[02:27:36] No ptyHost response to createProcess after 5 seconds
+[02:27:36] No ptyHost response to createProcess after 5 seconds
+[02:27:36] No ptyHost response to createProcess after 5 seconds
+IPC "Pty Host" errored with Error: spawn /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/server/node (deleted) ENOENT
+[02:28:22] [<unknown>][a2d05fc5][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[02:28:32] No ptyHost heartbeat after 6 seconds
+[02:28:37] No ptyHost heartbeat after 12 seconds

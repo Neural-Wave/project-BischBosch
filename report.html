@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Root Cause Analysis of Part Failures Using Causal Graph Discovery</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="root-cause-analysis-of-part-failures-using-causal-graph-discovery">Root Cause Analysis of Part Failures Using Causal Graph Discovery</h1>
+<h2 id="objective">Objective</h2>
+<p>This project aims to identify the root causes of part failures by modeling causal relationships among measurements collected at multiple production stations. The significance of this analysis lies in its potential to improve production quality, reduce downtime, and enhance operational efficiency. By understanding the causal factors of failures, we can provide actionable insights for production adjustments and preemptively address the conditions that lead to part failure.</p>
+<h2 id="approach">Approach</h2>
+<p>Dataset and Preprocessing</p>
+<p>The dataset comprises 2,500 instances of successful parts and 2,500 instances of failed parts, with measurements taken at five sequential stations. Causal dependencies in this multi-station setup are assumed to flow unidirectionally, where measurements at an earlier station can influence those at subsequent stations but not vice versa.</p>
+<p>Causal Discovery with the FCI Algorithm</p>
+<p>The Fast Causal Inference (FCI) algorithm from the causal-learn library was employed to generate a Partial Ancestral Graph (PAG), capturing conditional independence relationships among measurements across stations. This graph contained directed, bidirectional, and undirected edges, reflecting potential causation paths and partial dependencies.</p>
+<p>Adjacency Matrix Construction and Graph Neural Networks</p>
+<p>The PAG was converted into a binary adjacency matrix, representing the dependencies as a directed acyclic graph (DAG) by applying domain-specific assumptions and manual interventions to undirected edges. This adjacency matrix was then used as input for a Graph Neural Network (GNN) model. The GNN allowed further exploration of causal relationships across the complex multi-station data structure, facilitating a more refined analysis of failure influences.</p>
+<h2 id="graph-tools-and-libraries">Graph Tools and Libraries</h2>
+<p>The project made extensive use of:</p>
+<ul>
+<li>networkx for handling directed graphs and graph traversal,</li>
+<li>causal-learn for implementing the FCI algorithm, and</li>
+<li>NumPy for data manipulation and adjacency matrix operations.</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>Key Findings</p>
+<p>Analysis of the causal graph highlighted that measurements at Station 1 had the most significant influence on failure outcomes at downstream stations. The root cause analysis revealed that several early-stage measurements exhibited strong predictive power over failure, often preceding variations observed at subsequent stations.
+Visualization and Metrics
+The finalized causal adjacency matrix displayed distinct clusters of measurements with high influence on the failure node. These measurements consistently showed paths to failure, with key metrics indicating a correlation between early-stage measurements and downstream part outcomes. Figure 1 below (insert as placeholder) demonstrates an adjacency heatmap showcasing these relationships, visually emphasizing key influencers.
+Interpretations
+These findings suggest that early interventions at Station 1 could mitigate potential downstream issues, helping preemptively address factors linked to failure. The causal ranking of nodes further enabled prioritization of specific measurements for targeted process improvements.</p>
+<p>Challenges</p>
+<ul>
+<li>
+<p>Handling Undirected Edges in the PAG:
+The FCI algorithm produced several undirected edges in the initial PAG output. To convert this to a fully directed acyclic graph suitable for causal analysis, assumptions were required. These were informed by domain knowledge and tested for statistical significance.</p>
+</li>
+<li>
+<p>Complexity of Root Cause Quantification:
+Quantifying influence strength for root cause ranking presented additional complexity. This was managed by tracing influence paths and leveraging graph traversal techniques to isolate primary causal factors.
+Balancing Model Complexity with Interpretability:
+While the GNN model enabled nuanced analysis, interpretability remained a priority. Simplifying the model while maintaining robustness was a balancing act, achieved by focusing on direct influence paths and ranking root causes accordingly.</p>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>
