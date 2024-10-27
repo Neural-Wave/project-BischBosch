@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+body {
+  overflow: scroll; /* Show scrollbars */
+  background: #f1ffff;
+  background-image: url("../public/boschbisch.png");
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
